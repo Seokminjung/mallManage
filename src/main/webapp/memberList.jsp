@@ -6,17 +6,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-		<c:set var="bordList" value="${partBordList}"/>		<!--collection-->
-	  	<c:set var="pgNumList" value="${pageNumList}"/>		<!--collection-->
-	  	<c:set var="cateList" value="${categorizationList}"/>		<!--collection-->
-		<c:set var="secSize" value="${sectionSize}"/>		<!--string-->
-		<c:set var="secNum" value="${sectionNum}"/>		<!--string-->
-		<c:set var="totalItemSize" value="${totalBordSize}"/>		<!--string-->
-		<c:set var="pgNumSize" value="${fn:length(pgNumList)}"/>	<!--string-->
-		<c:set var="pageNum" value="${pageNum}"/>
+		<c:set var="bordList" value="${partBordList}" />	
+	  	<c:set var="pgNumList" value="${pageNumList}" />	
+		<c:set var="secSize" value="${sectionSize}" />
+		<c:set var="secNum" value="${sectionNum}" />	
+		<c:set var="totalItemSize" value="${totalBordSize}" />
+		<c:set var="pgNumSize" value="${fn:length(pgNumList)}" />
+		<c:set var="pageNum" value="${pageNum}" />
 		<c:set var="url" value='<%=response.encodeURL("eventItemList.action?pageNum=")%>'/>
 		<c:set var="url2" value='&searchTarget=${searchTarget}&searchContents=${searchContents}'/>
-
+		
 <html>
 <head>
 <meta charset="UTF-8">
@@ -132,13 +131,13 @@
 		</div>
 
 		<div id="navState">
-			<span> Home > Event associated with the item > list </span>
+			<span> Home > member > list </span>
 		</div>
 	</div>
 	<div id="contents">
 		<div id="centerContents">
 			<div id="contentsTitle">
-				<h3>Event item list</h3>
+				<h3>Member list</h3>
 			</div>
 			<div id="contentsInputBox">
 				<div id="leftHeader">
@@ -147,7 +146,12 @@
 					<input type="button" name="add" value="추가" />
 				</div>
 				<div id="rightHeader">
-				 <form name="searchForm"  method='POST' action='<s:url action="searchEventItemList" />'>
+				 <form name="searchForm"  method='POST' action='<s:url action="searchMemberList" />'>
+				 	<select>
+				 		<option> ID </option>
+				 		<option> NAME </option>
+				 		<option> TELL </option>
+				 	</select>
 					<input type="text" name="searchText" />
 					<input type="submit" name="searchSubmit" value="Search" />
 				</form>
@@ -156,30 +160,22 @@
 			<div id="contentsBody">
 				<div id="contentsHeader">
 					<span class="checkBox"><input class='firstCheckBox' type="checkbox" name="checkEventNo" /></span>
-					<span class="no"> No </span>
-					<span class="categorization"> categorization </span>
-					<span class="title"> Title </span>
-					<span class="state"> State </span>
-					<span class="startDate"> Start Date </span>
-					<span class="endDate"> end Date </span>
+					<span class="id"> ID </span>
+					<span class="name"> NAME </span>
+					<span class="tell"> TELL </span>
+					<span class="regDate"> Registration Date </span>
 				</div>
-<c:forEach var="eventObj" items="${partBordList}"  varStatus="status1">				
+				
+<c:forEach var="memberObj" items="${partBordList}"  varStatus="status1">
 				<div class="contentsList">
-					<span class="checkBox"><input type="checkbox" name="checkEventNo" value='${eventObj.no}'/></span>
-					<span class="no"> ${eventObj.no} </span>
-					<span class="categorization">
-				<c:forEach var="eventsCateObj" items="${eventsCategorizationList}"  varStatus="status1">
-					<c:if test="${eventsCateObj.displayOrder==eventObj.categorization}">
-						 ${eventsCateObj.displayName}
-					</c:if>
-				 </c:forEach>
-					</span>	
-					<span class="title"><a href='<%=response.encodeURL("viewEventItem.action?eventNo=")%>${eventObj.no}' > ${eventObj.title1} </a></span>
-					<span class="state"> ${eventObj.state} </span>
-					<span class="startDate"> ${eventObj.startDate}</span>
-					<span class="endDate"> ${eventObj.endDate}</span>
+					<span class="checkBox"><input type="checkbox" name="checkMemberNo" value='222'/></span>
+					<span class="id"><a href='#'> ${memberObj.id} </a></span>
+					<span class="name"> ${memberObj.name}	</span>	
+					<span class="tell"> ${memberObj.phone}  </span>
+					<span class="regDate"> ${memberObj.regDate} </span>
 				</div>
-</c:forEach>					
+</c:forEach>	
+				
 			</div>
 			<div id="itemIndex">
 			
@@ -193,7 +189,7 @@
 				<c:otherwise>
 					<div>
 	<c:set var="pn" value="${(secNum*5)-5}"/>
-					<i> <a href=${url}${pn}${categoryNoSet}>PriviousPage</a>	</i>
+					<i> <a href=${url}${pn}>PriviousPage</a>	</i>
 					</div>
 				</c:otherwise>
 			</c:choose>
@@ -205,7 +201,7 @@
 			<c:if test="${secNum!=secSize}">
 				<div>
 				<c:set var="pn" value="${(secNum*5)+1}"/>
-			<i> <a href=${url}${pn}${categoryNoSet}> NextPage</a></i>
+			<i> <a href=${url}${pn}> NextPage</a></i>
 				</div>
 			</c:if>
 		</c:when>
@@ -215,8 +211,8 @@
 			</c:if>
 			<c:if test="${pgNumSize>=i.index}">
 				<div>
-			<i> <a href=${url}${pgNumList[i.index-1]}${categoryNoSet}>
-			${pgNumList[i.index-1]}	</a>	</i>
+			<i> <a href=${url}${pgNumList[i.index-1]}>
+				</a>	</i>
 				</div>
 			</c:if>			
 	   </c:otherwise>
