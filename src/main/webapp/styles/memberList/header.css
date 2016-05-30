@@ -1,0 +1,159 @@
+@CHARSET "UTF-8";
+div#banner {
+	width:1024px;
+	height:100px;
+	margin:0px auto;
+	border:1px solid black;	
+}
+div#nav1{
+	display:block;
+	width:1024px;
+	height:100px;
+	margin:0px auto;
+//	border:1px solid red;	
+}
+#nav, #nav ul{
+margin:0;
+padding:0;
+list-style-type:none;
+//list-style-position:outside;
+//position:relative;
+line-height:1.5em; 
+}
+
+#nav a{
+display:block;
+padding:0px 8px;
+border:1px solid #333;
+color:#fff;
+text-decoration:none;
+background-color:#333;
+}
+
+#nav a:hover{
+background-color:#fff;
+color:#333;
+}
+
+#nav li{
+float:left;
+position:relative;
+}
+
+#nav ul {
+position:absolute;
+display:none;
+//width:12em;
+//width:20em;
+top:1.6em;
+}
+
+#nav li ul a{
+width:15em;
+//width:20em;
+height:auto;
+float:left;
+}
+#nav #statisticsUl {
+width:7em;
+}
+#nav #statisticsUl ul{
+left:7.3em;
+width:7em;
+}
+#nav #countUl {
+//left:7.3em;
+width:15em;
+}
+#nav .countA{
+// not applicable rules.
+// width:17em;
+}
+#nav #countUl .countA{
+width:15em;
+}
+#nav #statisticsUl a{
+width:7em;
+}
+
+#nav #boardUl {
+width:7em;
+}
+#nav #boardUl .boardA {
+width:7em;
+}
+
+#nav #eventUl {
+//width: 5em;
+}
+#nav #eventUl li a{
+width: 17em;
+}
+#nav #eventUl li ul {
+left:17em;
+}
+#nav #eventUl li ul li a{
+width: 9em;
+}
+
+#nav #itemUl {
+width:7em;
+}
+#nav #itemUl ul{
+left:7.3em;
+width:7em;
+}
+#nav #itemUl .itemA {
+width:7em;
+}
+#nav #messageUl {
+width:7em;
+}
+#nav #messageUl .messageA {
+width:7em;
+}
+#nav #saleUl,#nav #saleUl a, #nav #rankUl {
+width:7em;
+}
+#nav #rankUl a {
+width:16em;
+}
+#nav .logUl {
+width:7em;
+}
+#nav .logUl .userA {
+width:13em;
+}
+#nav ul ul{
+top:auto;
+}	
+
+#nav li ul ul {
+left:15em;
+//left:20em;
+margin:0px 0 0 10px;
+}
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li:hover ul ul ul ul{
+display:none;
+}
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul{
+display:block;
+}
+
+
+#navState {
+//	position:initial;
+	display:block;
+	width:1024px;
+	height: 25px;
+	margin:2px auto;
+	padding-top:8px;
+//	padding-left:10px;
+	background: #e9f0db;
+	font-size:12px;
+//	font-style:itelic;
+}
+#navState span{
+	margin-left:15px;
+}	

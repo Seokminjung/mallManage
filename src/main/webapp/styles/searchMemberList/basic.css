@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+body { 
+	font-family: verdana, arial, sans-serif; 
+	font-size: 1em; 
+}
+#container {
+//	border: 1px solid black;
+//	width: 990px;
+	width: 1024px;
+//	height: 970px;
+	margin: 0 auto;
+}
+#container #header {
+	margin: 0 auto;
+	width: 1024px;
+//	width: 990px;
+	height: 250px;
+
+//	border: 1px solid black;
+}
+
+#container #contents {
+	top:300px;
+//	border: 3px solid black;
+	width: 990px;
+//	height: 550px;
+	margin: 0 auto;
+
+}
+#container #footer {
+	clear:both;
+	display:block;
+	width:1024px;	
+//	width:990px;
+	height:150px;
+	border:thin solid black;
+	margin: 10px auto;
+}
