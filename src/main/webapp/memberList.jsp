@@ -169,7 +169,7 @@
 <c:forEach var="memberObj" items="${partBordList}"  varStatus="status1">
 				<div class="contentsList">
 					<span class="checkBox"><input type="checkbox" name="checkMemberNo" value='222'/></span>
-					<span class="id"><a href='#'> ${memberObj.id} </a></span>
+					<span class="id"><a href='<%=response.encodeURL("viewMemberInfo.action?no=")%>${memberObj.no}' > ${memberObj.id} </a></span>
 					<span class="name"> ${memberObj.name}	</span>	
 					<span class="tell"> ${memberObj.phone}  </span>
 					<span class="regDate"> ${memberObj.regDate} </span>

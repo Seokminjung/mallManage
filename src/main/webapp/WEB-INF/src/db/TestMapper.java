@@ -11,6 +11,7 @@ import model.ItemsCategorization;
 import model.ItemsPictures;
 import model.Members;
 import model.ModelInterface;
+import model.PurchaseRecord;
 import model.Suppliers;
 
 import org.apache.ibatis.annotations.Delete;
@@ -23,6 +24,13 @@ import org.apache.ibatis.annotations.Update;
 public interface TestMapper {
 	@Select("SELECT * FROM members")
 	List<Members> getMemberList();
+	@Select("SELECT * FROM members WHERE no=#{no}")
+	Members getMemberWithNo(int no);
+	@Select("SELECT * FROM items WHERE code=#{code}")
+	Items getItemsWithCode(int code);
+	@Select("SELECT * FROM purchaseRecord WHERE member=#{memberNo}")
+	List<PurchaseRecord> getPurchaseRecordWithNo(int memberNo);
+
 /*	
 	@Select("SELECT * FROM events")
 	List<Events> getEventList();

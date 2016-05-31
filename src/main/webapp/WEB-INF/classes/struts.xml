@@ -10,6 +10,11 @@
 					/memberList.jsp
 				</result>
 			</action>
+			<action name="viewMemberInfo" class="member.ViewMemberInfo">
+				<result name="success">
+					/viewMemberInfo.jsp
+				</result>
+			</action>
 <!-- 
 			<action name="addEventCategory" class="event.AddEventCategory">
 				<result name="initAccess">

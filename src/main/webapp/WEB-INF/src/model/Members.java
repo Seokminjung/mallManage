@@ -10,6 +10,7 @@ private String address;
 private String phone;
 private int mileage;
 private String regDate;
+private String modifyDate;
 private String accAnswer;
 private String accAsk;
 private String grade;
@@ -80,6 +81,12 @@ public String getGrade() {
 }
 public void setGrade(String grade) {
 	this.grade = grade;
+}
+public String getModifyDate() {
+	return modifyDate;
+}
+public void setModifyDate(String modifyDate) {
+	this.modifyDate = modifyDate;
 }
 
 
